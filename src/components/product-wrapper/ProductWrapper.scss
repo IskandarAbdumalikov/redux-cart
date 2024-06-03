@@ -1,0 +1,117 @@
+.product__wrapper,
+.loading__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 50px;
+}
+
+.loading__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+  height: 600px;
+  border-radius: 10px;
+  &__img {
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+  }
+  &__info {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &__desc {
+      height: 50px;
+      width: 100%;
+      border-radius: 10px;
+    }
+    &__desc:nth-child(2) {
+      width: 90%;
+    }
+    &__desc:nth-child(3) {
+      width: 80%;
+    }
+  }
+}
+.product__item {
+  width: 300px;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px;
+    height: 40%;
+    p {
+      display: -webkit-box;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    height: 10%;
+    .add__cart-btn {
+      background: rgb(0, 255, 0);
+      color: white;
+      border: 1px solid rgb(0, 255, 0);
+      border-radius: 10px;
+      padding: 10px 20px;
+      transition: 0.4s;
+    }
+    .add__cart-btn:hover {
+      background: green;
+      border-color: green;
+    }
+    .like__btn {
+      background: transparent;
+      font-size: 25px;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .product__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    .product__item {
+      width: 100%;
+      height: 500px;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .product__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bg__animation {
+  background: linear-gradient(90deg, #eee, #ddd, #eee);
+  background-size: 200%;
+  animation: bgMove 1s linear 0s infinite;
+}
+@keyframes bgMove {
+  to {
+    background-position: 200%;
+  }
+}
