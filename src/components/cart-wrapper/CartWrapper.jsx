@@ -26,6 +26,11 @@ const CartWrapper = ({ data }) => {
   let handlePurchase = () => {
     setShowModule(true);
   };
+
+  let calculatePrice = () => {
+    let total = data?.reduce((sum, item) => sum + item.amount * item.price, 0);
+    return total;
+  };
   let cartItems = data?.map((el) => (
     <div className="product__cart container" key={el.id}>
       <div className="product__cart__left">
@@ -108,7 +113,7 @@ const CartWrapper = ({ data }) => {
         </div>
         <div className="purchase__card">
           <div>
-            <p>Total price:</p> <span>$319</span>
+            <p>Total price:</p> <span>${(calculatePrice()).toFixed(2)}</span>
           </div>
           <div className="discount">
             <p>Discount:</p> <span>{value === "laylo" ? "-$100" : "-$60"}</span>

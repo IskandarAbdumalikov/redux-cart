@@ -1,6 +1,9 @@
 import React from "react";
 import "./purchaseInfo.scss";
 
+
+
+
 const PurchaseInfo = ({ handleBuy }) => {
   return (
     <div className="purchase__module">
